@@ -1,0 +1,180 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-size: 13px;
+  font-family: 'Manrope', sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  line-height: 1.5;
+
+  display: grid;
+  place-content: center;
+}
+
+article {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-inline: 2rem;
+  margin-bottom: 1rem;
+}
+
+picture {
+  display: flex;
+
+  flex-basis: 230px;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex-basis: 320px;
+  flex-grow: 2;
+}
+
+header {
+  padding: 1.5rem 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 1.125rem;
+  color: hsl(217, 19%, 35%);
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 500;
+  color: hsl(214, 17%, 51%);
+}
+
+.dark__bg {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.social {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2.5rem;
+}
+
+.avatar {
+  display: none;
+}
+
+.avatar.active {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1rem;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+p.name {
+  font-weight: 700;
+  color:hsl(217, 19%, 35%);
+}
+
+p.date {
+  color:hsl(212, 23%, 69%);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+  background-color: hsl(210, 46%, 95%);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+button:hover + ul.social__tooltips {
+  opacity: 1;
+}
+
+ul.social__tooltips {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 2rem;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+ul.social__tooltips::after {
+  content: '';
+
+  position: absolute;
+  bottom: -0.5rem;
+  right: 2.8125rem;
+
+  transform: rotate(45deg);
+
+  height: 20px;
+  width: 20px;
+  background-color: hsl(217, 19%, 35%);
+}
+
+ul.social__menu {
+  display: none;
+}
+
+ul.social__menu.active {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+ul.social__menu li, ul.social__tooltips li {
+  list-style: none;
+}
+
+ul.social__menu li a, ul.social__tooltips li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: hsl(214, 17%, 51%);
+}
+
+
